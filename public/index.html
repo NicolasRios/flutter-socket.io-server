@@ -23,10 +23,15 @@
             console.log('Perdemos a comunicação com o Servidor')
         });
 
-        socket.emit('mensagem', {nombre: 'Fernando' });
+        socket.emit('mensagem', {nombre: 'Nicolas' });
 
-        socket.on('mensagem', function( payload ){
+        socket.on('nova-mensagem', function( payload ){
             console.log('Escutando: ', payload);
+        });
+
+        socket.on('active-bands', function( bands ){
+            console.clear();
+            console.table(bands);
         });
 
     </script>
